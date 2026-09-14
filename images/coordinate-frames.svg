@@ -1,0 +1,91 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World frame with Z up versus the OpenCV camera frame with Z forward, and below, the two possible corner windings of a marker — only one of which matches reality.">
+  <rect x="0" y="0" width="900" height="520" fill="#fcfcfb" rx="10"/>
+
+  <defs>
+    <marker id="ax" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><polygon points="0,0 7,3 0,6" fill="#0b0b0b"/></marker>
+    <marker id="axb" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><polygon points="0,0 7,3 0,6" fill="#2a78d6"/></marker>
+    <marker id="cw" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><polygon points="0,0 6,3 0,6" fill="#1baf7a"/></marker>
+    <marker id="ccw" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><polygon points="0,0 6,3 0,6" fill="#e34948"/></marker>
+  </defs>
+
+  <!-- ===== Left panel: world frame ===== -->
+  <text x="225" y="34" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#0b0b0b">World frame</text>
+
+  <!-- ceiling with markers -->
+  <line x1="90" y1="80" x2="360" y2="80" stroke="#0b0b0b" stroke-width="1.2"/>
+  <text x="90" y="70" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#52514e">ceiling, Z = ceiling_height_m</text>
+  <rect x="150" y="72" width="16" height="16" fill="#fff" stroke="#2a78d6" stroke-width="2"/>
+  <rect x="280" y="72" width="16" height="16" fill="#fff" stroke="#2a78d6" stroke-width="2"/>
+
+  <!-- floor plane (parallelogram) -->
+  <polygon points="70,260 300,260 260,210 30,210" fill="none" stroke="#c3c2b7" stroke-width="1"/>
+
+  <!-- origin -->
+  <circle cx="70" cy="260" r="3.5" fill="#0b0b0b"/>
+  <text x="60" y="278" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#52514e">origin</text>
+
+  <!-- X right -->
+  <line x1="70" y1="260" x2="190" y2="260" stroke="#0b0b0b" stroke-width="2" marker-end="url(#ax)"/>
+  <text x="200" y="264" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#0b0b0b">X right</text>
+  <!-- Y forward (into the floor plane) -->
+  <line x1="70" y1="260" x2="220" y2="218" stroke="#0b0b0b" stroke-width="2" marker-end="url(#ax)"/>
+  <text x="225" y="212" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#0b0b0b">Y forward</text>
+  <!-- Z up -->
+  <line x1="70" y1="260" x2="70" y2="100" stroke="#0b0b0b" stroke-width="2" marker-end="url(#ax)"/>
+  <text x="78" y="105" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#0b0b0b">Z up</text>
+
+  <!-- camera looking up -->
+  <circle cx="150" cy="235" r="7" fill="#fff" stroke="#0b0b0b" stroke-width="1.5"/>
+  <line x1="150" y1="228" x2="150" y2="95" stroke="#0b0b0b" stroke-width="1.3" stroke-dasharray="2,3"/>
+  <text x="160" y="238" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#52514e">camera</text>
+
+  <text x="225" y="300" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#0b0b0b">metres everywhere · origin at a marked corner</text>
+
+  <!-- ===== Right panel: camera frame ===== -->
+  <text x="675" y="34" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#0b0b0b">Camera frame (OpenCV)</text>
+
+  <rect x="645" y="220" width="60" height="34" rx="6" fill="#fff" stroke="#0b0b0b" stroke-width="1.5"/>
+  <circle cx="675" cy="215" r="9" fill="#fff" stroke="#0b0b0b" stroke-width="1.5"/>
+
+  <line x1="675" y1="237" x2="780" y2="237" stroke="#0b0b0b" stroke-width="2" marker-end="url(#ax)"/>
+  <text x="787" y="241" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#0b0b0b">X right</text>
+
+  <line x1="675" y1="237" x2="675" y2="320" stroke="#0b0b0b" stroke-width="2" marker-end="url(#ax)"/>
+  <text x="682" y="335" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#0b0b0b">Y down</text>
+
+  <line x1="675" y1="237" x2="600" y2="140" stroke="#2a78d6" stroke-width="2" marker-end="url(#axb)"/>
+  <text x="565" y="128" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#2a78d6">Z forward (up, at the ceiling)</text>
+
+  <text x="675" y="390" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#0b0b0b">solvePnP solves world → camera;</text>
+  <text x="675" y="406" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#0b0b0b">C = −Rᵀ·tvec flips it back to camera-in-world</text>
+
+  <!-- divider -->
+  <line x1="0" y1="430" x2="900" y2="430" stroke="#c3c2b7" stroke-width="1"/>
+
+  <!-- ===== The trap ===== -->
+  <text x="450" y="456" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#0b0b0b">The trap: two ways to read the same 4 corners</text>
+
+  <!-- correct winding -->
+  <g transform="translate(280,470)">
+    <rect x="0" y="0" width="70" height="40" fill="#fff" stroke="#1baf7a" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="3" fill="#1baf7a"/><text x="-12" y="-6" font-size="10" fill="#1baf7a">0</text>
+    <circle cx="70" cy="0" r="3" fill="#1baf7a"/><text x="76" y="-6" font-size="10" fill="#1baf7a">1</text>
+    <circle cx="70" cy="40" r="3" fill="#1baf7a"/><text x="76" y="52" font-size="10" fill="#1baf7a">2</text>
+    <circle cx="0" cy="40" r="3" fill="#1baf7a"/><text x="-12" y="52" font-size="10" fill="#1baf7a">3</text>
+    <path d="M 10,0 H 60" stroke="#1baf7a" stroke-width="1.5" marker-end="url(#cw)"/>
+    <path d="M 70,10 V 30" stroke="#1baf7a" stroke-width="1.5" marker-end="url(#cw)"/>
+    <text x="35" y="65" text-anchor="middle" font-size="11" fill="#0b0b0b">matches world Y → correct</text>
+  </g>
+
+  <!-- mirrored winding -->
+  <g transform="translate(560,470)">
+    <rect x="0" y="0" width="70" height="40" fill="#fff" stroke="#e34948" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="3" fill="#e34948"/><text x="-12" y="-6" font-size="10" fill="#e34948">0</text>
+    <circle cx="0" cy="40" r="3" fill="#e34948"/><text x="-12" y="52" font-size="10" fill="#e34948">1</text>
+    <circle cx="70" cy="40" r="3" fill="#e34948"/><text x="76" y="52" font-size="10" fill="#e34948">2</text>
+    <circle cx="70" cy="0" r="3" fill="#e34948"/><text x="76" y="-6" font-size="10" fill="#e34948">3</text>
+    <path d="M 0,10 V 30" stroke="#e34948" stroke-width="1.5" marker-end="url(#ccw)"/>
+    <path d="M 10,40 H 60" stroke="#e34948" stroke-width="1.5" marker-end="url(#ccw)"/>
+    <text x="35" y="65" text-anchor="middle" font-size="11" fill="#0b0b0b">mirrored → 10-100x worse fit</text>
+  </g>
+</svg>
