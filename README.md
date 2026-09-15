@@ -1,4 +1,4 @@
-# In-house localization — a ceiling that tells you where you are
+# In-house localization: a ceiling that tells you where you are
 
 A camera pointed straight up reads a grid of printed codes taped to the ceiling, and
 works out exactly where it is standing on the floor below. No satellites, no WiFi
@@ -16,7 +16,7 @@ document.
 
 ---
 
-## 1. Say it in one sentence
+## 1. Overview
 
 > A camera looks at "stars" of known position on the ceiling, and does the same
 > triangulation trick a ship's navigator does with real stars — just pointed the
@@ -27,7 +27,7 @@ with reality.
 
 ---
 
-## 2. The analogy
+## 2. Historic motivation
 
 Sailors have been doing this for centuries with a sextant. You know exactly where a
 handful of stars are in the sky (astronomers already worked that out). You measure
@@ -53,7 +53,7 @@ most important file in the project, not `starnav.py`.
 
 ---
 
-## 3. How it actually works, step by step
+## 3. Step by step breakdown
 
 Explaining "it does PnP" to someone who doesn't already know what PnP is isn't an
 explanation — that's the Feynman trap, reusing jargon as if it were understanding.
