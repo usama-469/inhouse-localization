@@ -1,5 +1,13 @@
 # In-house localization: a ceiling that tells you where you are
 
+## Video Demonstration
+
+
+https://github.com/user-attachments/assets/7a19405f-3631-452c-a8fe-5bb534ff7410
+
+
+
+
 A camera pointed straight up reads a grid of printed codes taped to the ceiling, and
 works out exactly where it is standing on the floor below. No satellites, no WiFi
 triangulation, no beacons to install and maintain — just a camera, some cheap paper
